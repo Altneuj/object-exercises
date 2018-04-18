@@ -1,11 +1,11 @@
 /*
 Write a function called "greetCustomer".
 
-Given a name, "greetCustomer" returns a greeting based on how many times that customer has visited the restaurant.  Please refer to the customerData object. 
+Given a name, "greetCustomer" returns a greeting based on how many times that customer has visited the restaurant.  Please refer to the customerData object.
 
 The greeting should be different, depending on the name on their reservation.
 
-Case 1 - Unknown customer ( Name is not present in customerData ): 
+Case 1 - Unknown customer ( Name is not present in customerData ):
 
 var output = greetCustomer('Terrance');
 console.log(output); // --> 'Welcome! Is this your first time?'
@@ -22,7 +22,7 @@ console.log(output); // --> 'Welcome back, Carol! So glad to see you again!'
 
 Notes:
 * Your function should not alter the customerData object to update the number of visits.
-* Do not hardcode to the exact sample data. This is a BAD IDEA:
+* Do not hardcode to the exact sample data. This is a BAD IDE:
 
 
 if (firstName === 'Joe') {
@@ -49,8 +49,17 @@ var customerData = {
 
 function greetCustomer(firstName) {
   var greeting = '';
-  // your code here
+  if (customerData[firstName] && customerData[firstName].visits == 1) {
+    greeting = "Welcome back, " + firstName + "! We're glad you liked us the first time!";
+  }
+
+  else if (customerData[firstName] && customerData[firstName].visits > 1) {
+    greeting = "Welcome back, " + firstName + "! So glad to see you again!"
+  }
+ else {greeting = "Welcome! Is this your first time?";}
 
   return greeting;
 }
 
+
+console.log(greetCustomer("Voldemort"));

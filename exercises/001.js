@@ -22,6 +22,13 @@ function transformFirstAndLast(array) {
 }
 */
 
+
 function transformFirstAndLast(array) {
-  //your code here
+  var newObj = {};
+  for (i = 0; i < (array.length / 2); i++) {
+    var endLength = array.length - 1;
+    var valueStart = (endLength - i);
+    newObj[array[i]] = array[valueStart];
+  }
+  return newObj;
 }
