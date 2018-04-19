@@ -26,10 +26,12 @@ Starter Code :
 
 function transformEmployeeData(array) {
   var newArray = [];
-  var newObject = {};
   for (i = 0; i < array.length; i++) {
-    for (k = 0; k < array[i].length; i++){
-
+     var newObject = {};
+    for (k = 0; k < array[i].length; k++){
+      newObject[array[i][k][0]] = array[i][k][1]
+      newArray.push(newObject);
     }
   }
+  return newArray;
 }
